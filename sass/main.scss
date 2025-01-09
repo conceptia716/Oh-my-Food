@@ -61,6 +61,16 @@ header {
       text-decoration: none;
     }
   }
+  nav {
+    ul{
+      list-style: none;
+      li > a {
+        font-family: "Shrikhand", serif;
+        text-decoration: none;
+        font-size: 1,5rem;
+      }
+    }
+  }
   > div:nth-child(2) {
     width: 100%;
     display: flex;

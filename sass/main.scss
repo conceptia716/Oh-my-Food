@@ -624,3 +624,155 @@ section {
     transform: rotate(1800deg);
   }
 }
+/* Variables globales */
+$primary-color: #6a0dad; /* Violet */
+$secondary-color: #e500a4; /* Rose */
+$light-gray: #f9f9f9; /* Gris clair */
+$text-color: #333; /* Couleur du texte */
+$font-primary: 'Roboto', sans-serif; /* Police principale */
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
+
+/* Styles globaux */
+body {
+  font-family: $font-primary;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: $text-color;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* Header (haut de la page) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: $light-gray;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .location {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+
+    svg {
+      margin-right: 5px; /* Icône de localisation */
+    }
+  }
+}
+
+/* Section principale (texte + bouton) */
+.main-section {
+  text-align: center;
+  padding: 20px;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: $text-color;
+  }
+
+  .btn {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(90deg, $primary-color, $secondary-color);
+    border-radius: 8px;
+    padding: 10px 20px;
+    box-shadow: $box-shadow;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* Section Fonctionnement (étapes) */
+.steps {
+  padding: 20px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .card {
+    background: $light-gray;
+    border-radius: 10px;
+    box-shadow: $box-shadow;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    .icon {
+      background: $primary-color;
+      color: #fff;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+
+    p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+      color: $text-color;
+    }
+  }
+}
+
+/* Section Restaurants */
+.restaurants {
+  padding: 20px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .card {
+    position: relative;
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: #4caf50;
+      color: #fff;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+  }
+}

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-size: 16px;
   margin: 0 auto;
@@ -575,4 +576,140 @@ section .title-heart .heart:hover .heart-2 {
   100% {
     transform: rotate(1800deg);
   }
+}
+/* Variables globales */
+/* Violet */
+/* Rose */
+/* Gris clair */
+/* Couleur du texte */
+/* Police principale */
+/* Ombre */
+/* Styles globaux */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+/* Header (haut de la page) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+}
+header h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+header .location {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+header .location svg {
+  margin-right: 5px; /* Icône de localisation */
+}
+
+/* Section principale (texte + bouton) */
+.main-section {
+  text-align: center;
+  padding: 20px;
+}
+.main-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.main-section p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333;
+}
+.main-section .btn {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(90deg, #6a0dad, #e500a4);
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.main-section .btn:hover {
+  transform: scale(1.05);
+}
+
+/* Section Fonctionnement (étapes) */
+.steps {
+  padding: 20px;
+}
+.steps h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.steps .card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.steps .card .icon {
+  background: #6a0dad;
+  color: #fff;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+.steps .card p {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Section Restaurants */
+.restaurants {
+  padding: 20px;
+}
+.restaurants h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.restaurants .card {
+  position: relative;
+}
+.restaurants .card img {
+  width: 100%;
+  border-radius: 10px;
+}
+.restaurants .card .badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #4caf50;
+  color: #fff;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-transform: uppercase;
 }

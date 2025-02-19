@@ -1,15 +1,17 @@
 @charset "UTF-8";
 body {
-  font-size: 16px;
+  font-size: 25px;
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   max-width: 1440px;
+  box-sizing: border-box;
 }
 
 header {
   display: flex;
   align-content: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
 }
 header > div:nth-child(1) {
@@ -87,10 +89,6 @@ main > div:nth-child(2) button {
   color: #fff;
   padding: 15px 30px;
   border-radius: 50px;
-  transition: transform 1.3s;
-}
-main > div:nth-child(2) button:hover {
-  transform: scale(1.2);
 }
 main > div:nth-child(3) {
   margin-top: 50px;
@@ -187,10 +185,6 @@ section.main > div:nth-child(5) button {
   color: #fff;
   padding: 15px 30px;
   border-radius: 50px;
-  transition: transform 1.3s;
-}
-section.main > div:nth-child(5) button:hover {
-  transform: scale(1.2);
 }
 section.main .repas .title-repas {
   width: 100%;
@@ -314,6 +308,8 @@ section > h3 {
 section img {
   width: 100%;
   border-radius: 25px 25px 0 0;
+  height: 435px;
+  object-fit: cover;
 }
 section > div {
   display: flex;
@@ -330,10 +326,6 @@ section .carte {
   box-shadow: 1px 4px 18px -10px #000;
   margin: 0 0 50px 0;
   position: relative;
-  transition: transform 1.5s;
-}
-section .carte:hover {
-  transform: scale(0.9);
 }
 section span {
   background-color: #99e2d0;
@@ -342,7 +334,7 @@ section span {
   padding: 8px 15px 8px 15px;
   position: absolute;
   top: 15px;
-  right: 20px;
+  left: 20px;
 }
 section .title-heart {
   display: flex;
@@ -585,16 +577,9 @@ section .title-heart .heart:hover .heart-2 {
 /* Police principale */
 /* Ombre */
 /* Styles globaux */
-body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  color: #333;
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -643,13 +628,16 @@ header .location svg {
   border-radius: 8px;
   padding: 10px 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-.main-section .btn:hover {
-  transform: scale(1.05);
 }
 
 /* Section Fonctionnement (étapes) */
+.fonctionnement {
+  position: relative;
+}
+.fonctionnement div {
+  position: relative;
+}
+
 .steps {
   padding: 20px;
 }
@@ -712,4 +700,12 @@ header .location svg {
   padding: 5px 10px;
   border-radius: 5px;
   text-transform: uppercase;
+}
+
+@media all and (min-width: 768px) {
+  footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
 }

@@ -30,10 +30,6 @@ $linear: linear-gradient(
   color: #fff;
   padding: 15px 30px;
   border-radius: 50px;
-  transition: transform 1.3s;
-  &:hover {
-    transform: scale(1.2);
-  }
 }
 
 body {
@@ -41,11 +37,14 @@ body {
   margin: 0 auto;
   font-family: "Roboto", sans-serif;
   max-width: 1440px;
+  box-sizing: border-box;
 }
+
 header {
   display: flex;
   align-content: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
   > div:nth-child(1) {
     font-size: 2.5rem;
@@ -62,12 +61,12 @@ header {
     }
   }
   nav {
-    ul{
+    ul {
       list-style: none;
       li > a {
         font-family: "Shrikhand", serif;
         text-decoration: none;
-        font-size: 1,5rem;
+        font-size: 1, 5rem;
       }
     }
   }
@@ -329,6 +328,8 @@ section {
   img {
     width: 100%;
     border-radius: 25px 25px 0 0;
+    height: 435px;
+    object-fit: cover;
   }
   > div {
     @include center-block;
@@ -341,10 +342,6 @@ section {
     box-shadow: 1px 4px 18px -10px #000;
     margin: 0 0 50px 0;
     position: relative;
-    transition: transform 1.5s;
-    &:hover {
-      transform: scale(0.9);
-    }
   }
   span {
     background-color: #99e2d0;
@@ -353,7 +350,7 @@ section {
     padding: 8px 15px 8px 15px;
     position: absolute;
     top: 15px;
-    right: 20px;
+    left: 20px;
   }
   .title-heart {
     display: flex;
@@ -629,20 +626,14 @@ $primary-color: #6a0dad; /* Violet */
 $secondary-color: #e500a4; /* Rose */
 $light-gray: #f9f9f9; /* Gris clair */
 $text-color: #333; /* Couleur du texte */
-$font-primary: 'Roboto', sans-serif; /* Police principale */
+$font-primary: "Roboto", sans-serif; /* Police principale */
 $box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre */
 
 /* Styles globaux */
-body {
-  font-family: $font-primary;
-  margin: 0;
-  padding: 0;
-  background-color: #fff;
-  color: $text-color;
-  line-height: 1.6;
-}
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0;
 }
 
@@ -696,15 +687,16 @@ header {
     border-radius: 8px;
     padding: 10px 20px;
     box-shadow: $box-shadow;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
   }
 }
 
 /* Section Fonctionnement (étapes) */
+.fonctionnement {
+  position: relative;
+  div {
+    position: relative;
+  }
+}
 .steps {
   padding: 20px;
 
@@ -776,452 +768,11 @@ header {
     }
   }
 }
-* Loading */
-@keyframes loading-appear {
-   50% {
-       opacity: 0.95;
-   }
 
-   99% {
-       z-index: 21;
-   }
-
-   100% {
-       opacity: 0;
-       z-index: -20;
-   }
-}
-
-@keyframes rotate-gradient {
-   0% {
-       transform: rotate(0deg);
-   }
-
-   100% {
-       transform: rotate(360deg);
-   }
-}
-
-@keyframes icons-appearing {
-   0% {
-       transform: translateY(-150px);
-       opacity: 0;
-       animation-timing-function: cubic-bezier(.5, .78, .83, .67);
-   }
-
-   40% {
-       transform: translateY(-10px);
-       opacity: 1;
-
-   }
-
-   60% {
-       transform: translateY(-10px);
-       opacity: 1;
-
-   }
-
-   67% {
-       transform: rotate(10deg);
-   }
-
-   74% {
-       transform: rotate(-10deg);
-   }
-
-   80% {
-       transform: translateY(-10px);
-       opacity: 1;
-   }
-
-   100% {
-       transform: translateY(+150px);
-       opacity: 0;
-       animation-timing-function: cubic-bezier(.5, .78, .83, .67);
-   }
-}
-
-@keyframes ustensils-moving {
-   0% {
-       transform: translateY(-5px);
-       animation-timing-function: linear;
-   }
-
-   100% {
-       transform: translateY(5px);
-       animation-timing-function: linear;
-   }
-}
-
-/* Courses apparition */
-@keyframes fade-in {
-   0% {
-       transform: translateY(20px);
-       opacity: 0;
-   }
-
-   75% {
-       opacity: 1;
-   }
-
-   100% {
-       transform: translateY(0);
-       animation-timing-function: cubic-bezier(.17, .67, .83, .67);
-   }
-}
-
-.fade-in {
-   transform-origin: top;
-   animation: fade-in 2s forwards;
-
-   &--1delay {
-       animation: fade-in 2s 500ms both;
-   }
-
-   &--2delay {
-       animation: fade-in 2s 1000ms both;
-   }
-}
-
-/* Heart fill */
-@keyframes heart-fill {
-   0% {
-       opacity: (0);
-       transform: scale(0.2)
-   }
-
-   15% {
-       opacity: (.25);
-   }
-
-   80% {
-       opacity: (1);
-       transform: scale(1);
-   }
-
-   85% {
-       opacity: (1);
-       transform: scale(1.1);
-   }
-
-   95% {
-       opacity: (1);
-       transform: scale(1.05);
-   }
-
-   100% {
-       opacity: (1);
-       transform: scale(1);
-   }
-}
-
-/* CSS pour les éléments d'entrée */
-.race-list:nth-child(1) .race-cards {
-   animation: appearEntrance 1.5s ease forwards;
-   opacity: 0;
- }
-
- /* CSS pour les éléments de plat */
- .race-list:nth-child(2) .race-cards {
-   animation: appearPlat 5.5s ease forwards;
-   opacity: 0;
- }
-
- /* CSS pour les éléments de dessert */
- .race-list:nth-child(3) .race-cards {
-   animation: appearDessert 9.5s ease forwards;
-   opacity: 0;
- }
-
- /* Animation pour les éléments d'entrée */
- @keyframes appearEntrance {
-   0% {
-     opacity: 0;
-     transform: translateY(-20px);
-   }
-   100% {
-     opacity: 1;
-     transform: translateY(0);
-   }
- }
-
- /* Animation pour les éléments de plat */
- @keyframes appearPlat {
-   0% {
-     opacity: 0;
-     transform: translateY(-20px);
-   }
-   100% {
-     opacity: 1;
-     transform: translateY(0);
-   }
- }
-
- /* Animation pour les éléments de dessert */
- @keyframes appearDessert {
-   0% {
-     opacity: 0;
-     transform: translateY(-20px);
-   }
-   100% {
-     opacity: 1;
-     transform: translateY(0);
-   }
- }
- .hero__btngradient{
-  width: 218px;
-  height: 50px;
-  color: $white;
-  font-size: 16px;
-  @include gradient;
-  border-radius: 25px;
-  border: none;
-  font-weight: map-get($font-weight, medium );
-  @include object-shadow;
-  cursor: pointer;
-  margin: 27px 75px 57px 82px;
-  transition: opacity 300ms ease-in-out;
-
-  &:hover {
-      opacity: 0.88;
-      @include object-shadow(darken($shadow, 15%));
-  }
-
-  &--long {
-      width: 50%;
-      min-width: 150px;
-      max-width: 250px;
-  }
-
-}
-
-.button__like{
-  width: 28px;
-  z-index: 0;
-  position: relative;
-  font-family: "Font Awesome 5 Free";
-  font-size: 25px;
-  padding: 0;
-  border: transparent 0px solid;
-  background-color: transparent;
-  -webkit-text-stroke: 1px white;
-  cursor: pointer;
-
-  &:hover {
-      &::after {
-          z-index: 1;
-          animation: heart-fill 900ms forwards cubic-bezier(.65,1.01,.98,1.06);
-      }
-  }
-
-  &::after {
-      z-index: -1;
-      opacity: 0;
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      font-size: 25px;
-      content: "\f004";
-      color: transparent;
-      @include gradient(45deg);
-      background-clip: text;
-      transform-origin: bottom;
-      -webkit-text-stroke: 1px;
-  }
-  .loading-spinner-container {
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: $white;
-    opacity: 0.95;
-    animation: loading-appear 4s both ease-in-out;
-    z-index: 21;
+@media all and (min-width: 768px) {
+  footer {
     display: flex;
-    align-items: center;
-    justify-content: center;
- }
- 
- .loading-spinner {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 290px;
-    min-width: 290px;
-    height: 290px;
-    @include circle;
-    background: $gradient-loader;
-    z-index: 0;
-    animation: rotate-gradient 3s infinite;
- 
-    &::after {
-        z-index: 0;
-        position: absolute;
-        content: "";
-        width: 85%;
-        height: 85%;
-        background-color: $white;
-        @include circle;
-    }
- 
-    &__border {
-        z-index: -1;
-        position: absolute;
-        width: 290px;
-        height: 290px;
-        background-color: darken($white, 10%);
-        @include circle;
-    }
- 
-    &__plate {
-        position: absolute;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 120px;
-        height: 120px;
-        border: 4px solid darken($white, 60%);
-        background-color: darken($white, 65%);
-        margin: 0% 2%;
-        @include circle;
-        z-index: 3;
- 
-        &::before {
-            position: absolute;
-            display: flex;
-            width: 93%;
-            height: 93%;
-            @include circle;
-            border-bottom: 2px solid $white;
-            background-color: transparent;
-            transform: rotate(-25deg);
-            overflow: hidden;
-            content: "";
-        }
- 
-        &::after {
-            position: absolute;
-            display: flex;
-            width: 75%;
-            height: 75%;
-            @include circle;
-            border: 4px solid $white;
-            background-color: darken($white, 75%);
-            overflow: hidden;
-            content: "";
-        }
- 
-        &__knife {
-            position: absolute;
-            right: -40%;
-            height: 120px;
-            width: auto;
-            z-index: 6;
-            opacity: 1;
-            animation: ustensils-moving 500ms $icons-delay;
- 
-            & img {
-                height: 100%;
-            }
-        }
- 
-        &__fork {
-            position: absolute;
-            left: -40%;
-            height: 120px;
-            width: auto;
-            z-index: 5;
-            opacity: 1;
-            animation: ustensils-moving 500ms $icons-delay*3;
- 
-            & img {
-                height: 100%;
-            }
-        }
- 
-        &__food12 {
-            width: 25%;
-            height: 25%;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
- 
-            &::before {
-                position: absolute;
-                top: 35%;
-                right: 31%;
-                display: inline-block;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 40px;
-                content: "\f578";
-                color: $white;
-                transform: translateY(-150px);
-                animation: icons-appearing $icons-delay both;
-            }
- 
-            &::after {
-                width: auto;
-                height: auto;
-                z-index: 1;
-                position: absolute;
-                top: 35%;
-                right: 30%;
-                display: inline-block;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 40px;
-                content: "\f7ec";
-                color: $white;
-                transform: translateY(-150px);
-                animation: icons-appearing $icons-delay $icons-delay both;
-            }
-        }
- 
-        &__food34 {
-            width: 25%;
-            height: 25%;
-            z-index: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
- 
-            &::before {
-                position: absolute;
-                top: 35%;
-                right: 33%;
-                display: inline-block;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 40px;
-                content: "\f7ef";
-                color: $white;
-                transform: translateY(-150px);
-                animation: icons-appearing $icons-delay $icons-delay*2 both;
-            }
- 
-            &::after {
-                position: absolute;
-                top: 30%;
-                right: 37%;
-                display: inline-block;
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-                font-size: 40px;
-                content: "\f5d1";
-                color: $white;
-                transform: translateY(-150px);
-                animation: icons-appearing $icons-delay $icons-delay*3 both;
-            }
-        }
-    }
- }
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+}

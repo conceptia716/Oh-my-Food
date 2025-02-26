@@ -328,13 +328,14 @@ section .carte {
   position: relative;
 }
 section span {
-  background-color: #99e2d0;
-  color: #015843;
-  font-weight: 900;
-  padding: 8px 15px 8px 15px;
-  position: absolute;
-  top: 15px;
-  left: 20px;
+    background-color: #6d408e;
+    color: rgb(147, 86, 220);
+    border-radius: 25px;
+    font-weight: 900;
+    padding: 4px 10px 4px 10px;
+    position: absolute;
+    top: 15px;
+    left: 20px;
 }
 section .title-heart {
   display: flex;
@@ -708,4 +709,16 @@ header .location svg {
     align-items: flex-end;
     justify-content: flex-end;
   }
+
+  .explorer-btn {
+    background: rgb(147, 86, 220);
+    color: white;
+    padding: 10px 20px;
+    width: max-content;
+    border-radius: 20px;
+    text-decoration: none;
+    margin: auto;
+    &:hover {
+      background-color: #5a4abc;
+    }
 }

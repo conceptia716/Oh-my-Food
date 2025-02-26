@@ -63,11 +63,27 @@ header {
   nav {
     ul {
       list-style: none;
-      li > a {
+      padding: 0;
+      li {
+        text-align: center;
+        a {
         font-family: "Shrikhand", serif;
         text-decoration: none;
-        font-size: 1, 5rem;
+        font-size: 1.5rem;
+        color: #000;
+        }
       }
+    }
+  }
+  section {
+    background-color: rgba(234, 234, 234, 1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    p {
+
     }
   }
   > div:nth-child(2) {
@@ -85,6 +101,28 @@ header {
 }
 main {
   background-color: #fff;
+  box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  section:nth-child(1) {
+    @include center-block;
+    h1 {
+      text-align: center;
+      padding: 50px 0 0 0;
+      font-family: Roboto, sans-serif;
+      font-weight: 700;
+      line-height: 28px;
+      font-size: 24px;
+    }
+    p {
+      text-align: center;
+      font-family: Roboto, sans-serif;
+      font-weight: 300;
+      line-height: 21px;
+      font-size: 18px;
+    }
+    button {
+      @include btn;
+    }
+  }
   > div:nth-child(1) {
     text-align: center;
     padding: 25px 0px;
@@ -109,13 +147,6 @@ main {
       margin: 0px 70px 15px 70px;
       font-size: 1.5rem;
       font-weight: 900;
-    }
-    p {
-      margin: 15px;
-      font-weight: 700;
-    }
-    button {
-      @include btn;
     }
   }
   > div:nth-child(3) {
@@ -637,30 +668,6 @@ h3 {
   margin: 0;
 }
 
-/* Header (haut de la page) */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  background-color: $light-gray;
-
-  h1 {
-    font-size: 24px;
-    font-weight: bold;
-  }
-
-  .location {
-    display: flex;
-    align-items: center;
-    font-size: 14px;
-
-    svg {
-      margin-right: 5px; /* Icône de localisation */
-    }
-  }
-}
-
 /* Section principale (texte + bouton) */
 .main-section {
   text-align: center;
@@ -774,5 +781,17 @@ header {
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
+  }
+}
+.explorer-btn {
+  background: rgb(147, 86, 220);
+  color: white;
+  padding: 10px 20px;
+  width: max-content;
+  border-radius: 20px;
+  text-decoration: none;
+  margin: auto;
+  &:hover {
+    background-color: #5a4abc;
   }
 }
